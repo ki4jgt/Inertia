@@ -44,7 +44,7 @@ def on_press(key):
     except:
         pass
     
-    if "".join(stream) == "*/":
+    if "".join(stream) == "@/":
         if bit:
             stream = []
             b = "\b" * len(password) + "\b\b"
