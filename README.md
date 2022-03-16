@@ -7,7 +7,7 @@ The most secure passwords are randomly generated. Modern password requirments (1
 
 # Inertia offers a compromise.
 
-Inertia solves all of this, by hashing weak passwords through Argon2, along with a personal salt string generated for you on first run. This is achieved by listening for an activation keyboard sequence, capturing the inputted password, and replacing it with a base85 encoded Argon2 hash containing both your given password, and your personal salt string.
+Inertia solves all of this, by hashing weak passwords through Argon2, along with a personal salt string generated for you on first run. This is achieved by listening for an activation keyboard sequence, capturing the inputted password, and replacing it with an Argon2 hash containing both your given password, and your personal salt string.
 
 # Why?
 
