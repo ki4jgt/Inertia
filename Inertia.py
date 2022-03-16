@@ -4,7 +4,7 @@ bot = Controller()
 
 from os import listdir
 
-from argon2 import PasswordHasher
+import argon2
 
 from string import printable
 printable = printable.strip()
@@ -15,8 +15,8 @@ password = []
 stream = []
 salt = ""
 
-def hash(i):
-    return PasswordHasher().hash(i)[-20:]
+def hash(i, salt):
+    return argon2.low_level.hash_secret(i.encode(), salt.encode(), time_cost = 1, memory_cost = 512, parallelism=2, hash_len=20, type=argon2.low_level.Type.D).decode()[-20:]
 
 def saltGen():
     return ''.join(choice(printable) for i in range(20))
@@ -48,7 +48,7 @@ def on_press(key):
         if bit:
             stream = []
             b = "\b" * len(password) + "\b\b"
-            bot.type(b + hash("".join(password[:-2]) + salt))
+            bot.type(b + hash("".join(password[:-2]), salt))
         bit = not bit
         password = []
         
