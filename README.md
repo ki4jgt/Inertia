@@ -1,4 +1,4 @@
-# Inertia
+# Inertia Shield
 Inertia allows users to securely use weak passwords, by hashing them through Argon2, making it safe for them to login using passwords like: God, dog, their name, etc.
 
 # How do we do this?
