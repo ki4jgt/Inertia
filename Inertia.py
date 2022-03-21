@@ -46,7 +46,10 @@ def on_press(k):
     
     if k == keyboard.Key.backspace:
         if bit:
-            password.pop()
+            try:
+                password.pop()
+            except:
+                password = []
         else:
             try:
                 stream.pop()
