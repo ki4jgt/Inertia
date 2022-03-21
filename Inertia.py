@@ -31,12 +31,12 @@ else:
     fob.write(salt)
     fob.close()
 
-def on_press(key):
-    global bit, password, stream, salt, now
+def on_press(k):
+    global bit, password, stream, salt
     
     try:
-        if key.char in printable:
-            stream.append(key.char)
+        if k.char in printable:
+            stream.append(k.char)
             while len(stream) > 2:
                 stream.pop(0)
             if bit:
@@ -44,6 +44,15 @@ def on_press(key):
     except:
         pass
     
+    if k == keyboard.Key.backspace:
+        if bit:
+            password.pop()
+        else:
+            try:
+                stream.pop()
+            except:
+                stream = []
+        
     if "".join(stream) == "@/":
         if bit:
             stream = []
@@ -53,7 +62,7 @@ def on_press(key):
         password = []
         
     try:
-        print(key.char)
+        print(k.char)
     except:
         print("UNKNOWN")
     print(bit)
