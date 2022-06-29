@@ -35,7 +35,3 @@ To use Inertia:
 - Enter the activation sequence again
 
 Your weak password will be replaced with a secure 20 character string.
-
-# To My Critics
-
-This is no different than having a password manager with a master password on your system. All your information is in one place. My password for GitHub is Goddard. Gain access to my account, and we'll talk.
